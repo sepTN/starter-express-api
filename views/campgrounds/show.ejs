@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Showing <%= campground.title %></title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,10 +18,15 @@
     <!-- place navbar here -->
   </header>
   <main>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nemo blanditiis porro. Ipsum delectus eos vel! Iure, veniam facere! Vel a reiciendis veniam voluptas sint sit mollitia beatae facere voluptatum?
+    <h1><%= campground.title %></h1>
+    <h2><%= campground.location %></h2>
   </main>
   <footer>
-    <!-- place footer here -->
+    <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+      <button>Delete</button>
+    </form>
+    <a href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+    <a href="/campgrounds">Go Back</a>
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

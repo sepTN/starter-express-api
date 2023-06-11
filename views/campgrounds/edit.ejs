@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Editing <%= campground.title %>
+  </title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,19 +19,29 @@
     <!-- place navbar here -->
   </header>
   <main>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nemo blanditiis porro. Ipsum delectus eos vel! Iure, veniam facere! Vel a reiciendis veniam voluptas sint sit mollitia beatae facere voluptatum?
+    <h1>Editing: </h1>
+    <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="post">
+      <div><label for="title">Title</label>
+        <input type="text" id="title" name="campground[title]" value="<%= campground.title %>">
+      </div>
+      <div>
+        <label for="location">Location</label>
+        <input type="text" id="location" name="campground[location]" value="<%= campground.location %>">
+      </div>
+      <button>Update Campground</button>
+    </form>
   </main>
   <footer>
-    <!-- place footer here -->
+    <a href="/campgrounds/<%= campground._id %>">Go Back</a>
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
+    </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
+    </script>
 </body>
 
 </html>
