@@ -21,8 +21,11 @@ db().then(() => {
       const random1000 = Math.floor(Math.random() * 1000);
       const price = Math.floor(Math.random() * 20) + 10;
       const camp = new Campground({
-        location: `${cities[random1000].city}, ${cities[random1000].state}`,
         title: `${sample(descriptors)} ${sample(places)}`,
+        location: `${cities[random1000].city}, ${cities[random1000].state}`,
+        price: price,
+        image: 'https://source.unsplash.com/collection/48325' + Math.floor(Math.random() * 10),
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.'
       });
       await camp.save();
     }
