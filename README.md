@@ -20,7 +20,7 @@ Final project of The Web Developer Bootcamp 2023.
 
 ## Live Demo:
 
-https://worried-pink-eel.cyclic.app/
+https://yelps.cyclic.app/
 
 ## Deploy it in 7 seconds: 
 
