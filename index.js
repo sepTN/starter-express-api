@@ -104,6 +104,18 @@ app.delete('/campgrounds/:id/reviews/:reviewId', catchAsync(async (req, res) => 
     res.redirect(`/campgrounds/${id}`);
 }));
 
+app.get('/reseed', async (req, res) => {
+    const seed = require('./seeds/seed');
+    try {
+        await seed.db(); // Connect to the MongoDB database
+        await seed.seedDB(); // Seed the database with campgrounds
+        res.send('Database seeded successfully.');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('An error occurred while seeding the database.');
+    }
+});
+
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404));
 });
